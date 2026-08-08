@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>植物標本データベース</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <h1>植物標本データベース</h1>
+    </header>
+
+    <main class="container">
+
+        <!-- ==============================
+             検索エリア
+             ============================== -->
+        <section id="search-section" class="search-section">
+
+            <h2>検索</h2>
+
+            <!--
+                検索フォームはCSVの1行目から
+                JavaScriptで自動生成する。
+            -->
+            <form id="search-form">
+
+                <div id="search-fields">
+                    <!-- JavaScriptで検索項目を生成 -->
+                </div>
+
+                <div class="search-buttons">
+                    <button type="submit" id="search-button">
+                        検索
+                    </button>
+
+                    <button type="button" id="reset-button">
+                        リセット
+                    </button>
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- ==============================
+             検索結果エリア
+             ============================== -->
+        <section id="result-section" class="result-section">
+
+            <div class="result-header">
+
+                <h2>検索結果</h2>
+
+                <div class="result-controls">
+
+                    <span id="result-count">
+                        検索結果：0件
+                    </span>
+
+                    <label for="page-length">
+                        表示件数：
+                    </label>
+
+                    <select id="page-length">
+                        <option value="50">50件</option>
+                        <option value="100">100件</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==============================
+                 結果テーブル
+                 ============================== -->
+
+            <div class="table-wrapper">
+
+                <table id="result-table">
+
+                    <!--
+                        テーブルのヘッダーと内容は
+                        CSVの1行目とデータから
+                        JavaScriptで自動生成する。
+                    -->
+
+                    <thead>
+                        <tr id="result-header-row">
+                            <!-- JavaScriptで生成 -->
+                        </tr>
+                    </thead>
+
+                    <tbody id="result-body">
+                        <!-- JavaScriptで生成 -->
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- ==============================
+                 ページング
+                 ============================== -->
+
+            <nav
+                id="pagination"
+                class="pagination"
+                aria-label="検索結果ページ"
+            >
+                <!-- JavaScriptで生成 -->
+            </nav>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==============================
+         フッター
+         ============================== -->
+
+<!-- ==============================
+     JavaScript
+     ============================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.5.3/papaparse.min.js"></script>
+
+<script src="js/csv-loader.js"></script>
+<script src="js/search.js"></script>
+<script src="js/table.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
